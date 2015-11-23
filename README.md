@@ -1,7 +1,7 @@
 # jsimp
 JavaScript Image Processor
 
-##Installation
+## Installation
 HTML
 ```html
 <body>
@@ -10,7 +10,7 @@ HTML
 </body>
 ```
 
-##Usage
+## Usage
 In your HTML, create the canvas element and add the code that loads the required image on the canvas.
 ```html
 <canvas id="canvas"></canvas>
@@ -38,5 +38,5 @@ jsImp.greyScale();
 jsImp.loadImgToCanvas(canvas);
 ```
 
-##License
+## License
 Code released under the [MIT License](https://github.com/butane/jsimp/blob/master/LICENSE).
