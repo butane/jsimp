@@ -112,3 +112,7 @@ JSIMP.prototype.greyScale = function() {
     }
     return true;
 };
+
+if (typeof module !== 'undefined' && module) {
+	module.exports = JSIMP;
+}
