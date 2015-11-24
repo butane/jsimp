@@ -34,6 +34,14 @@ JSIMP.prototype._pixel = function (r, g, b, a) {
     this.a = a;
 };
 
+JSIMP.prototype._fixPixel = function (pixel) {
+    pixel.r = pixel.r>255?255:(pixel.r<0?0:Math.round(pixel.r));
+    pixel.g = pixel.g>255?255:(pixel.g<0?0:Math.round(pixel.g));
+    pixel.b = pixel.b>255?255:(pixel.b<0?0:Math.round(pixel.b));
+    pixel.a = pixel.a>255?255:(pixel.a<0?0:Math.round(pixel.a));
+    return pixel;
+};
+
 JSIMP.prototype._invertPixelColor = function (pixel) {
     pixel.r = 255 - pixel.r;
     pixel.g = 255 - pixel.g;
