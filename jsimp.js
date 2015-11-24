@@ -57,6 +57,13 @@ JSIMP.prototype._greyScalePixel = function (pixel) {
     return pixel;
 };
 
+JSIMP.prototype._pixelBrightness = function (pixel, factor) {
+    pixel.r += factor;
+    pixel.g += factor;
+    pixel.b += factor;
+    return this._fixPixel(pixel);
+};
+
 JSIMP.prototype.enableDebug = function() {
     debug = true;
 };
@@ -116,6 +123,15 @@ JSIMP.prototype.greyScale = function() {
     for (var row = 0; row < this._imgData.length; row++) {
         for (var col = 0; col < this._imgData[0].length; col++) {
             this._imgData[row][col] = this._greyScalePixel(this._imgData[row][col]);
+        }
+    }
+    return true;
+};
+
+JSIMP.prototype.brightness = function(factor) {
+    for (var row = 0; row < this._imgData.length; row++) {
+        for (var col = 0; col < this._imgData[0].length; col++) {
+            this._imgData[row][col] = this._pixelBrightness(this._imgData[row][col], factor);
         }
     }
     return true;
